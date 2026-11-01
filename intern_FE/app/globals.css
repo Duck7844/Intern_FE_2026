@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens – mirrored from the Pacificwide Figma variables       */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Colors */
+  --color-brand: #ac2125;
+  --color-brand-dark: #8e1b1e;
+  --color-ink: #1a1a1a; /* Neutral/Element Primary */
+  --color-ink-secondary: #757575; /* Neutral/Element Secondary */
+  --color-ink-tertiary: #a3a3a3; /* Neutral/Element Tertiary */
+  --color-surface: #ebebeb; /* Neutral/Surface */
+  --color-surface-a: #f7f7f7; /* Neutral/On-Surface A */
+  --color-stroke-light: #e0e0e0;
+  --color-stroke-bold: #c2c2c2;
+  --color-success: #17a52d;
+  --color-warning: #ff9500;
+
+  /* Radii */
+  --radius-label: 4px;
+  --radius-xs: 8px;
+  --radius-s: 12px;
+
+  /* Layout */
+  --container-content: 1142px; /* 1440 - 2 x 149 */
+
+  /* Shadows */
+  --shadow-card: 0 16px 16px rgba(0, 0, 0, 0.24);
+
+  /* Typography – headings (Bebas Neue) */
+  --text-h1: 56px;
+  --text-h1--line-height: 58px;
+  --text-h1-sm: 36px;
+  --text-h1-sm--line-height: 40px;
+  --text-h2: 44px;
+  --text-h2--line-height: 44px;
+  --text-h2-sm: 30px;
+  --text-h2-sm--line-height: 34px;
+  --text-h2a: 36px;
+  --text-h2a--line-height: 40px;
+  --text-h2a-sm: 28px;
+  --text-h2a-sm--line-height: 32px;
+  --text-h3: 28px;
+  --text-h3--line-height: 32px;
+  --text-h4: 24px;
+  --text-h4--line-height: 28px;
+  --text-h4--letter-spacing: 1px;
+  --text-h5: 20px;
+  --text-h5--line-height: 24px;
+  --text-h5--letter-spacing: 2px;
+
+  /* Typography – body (Gilroy) */
+  --text-hero-sub: 24px;
+  --text-hero-sub--line-height: 28px;
+  --text-body1: 18px;
+  --text-body1--line-height: 28px;
+  --text-body2: 16px;
+  --text-body2--line-height: 24px;
+  --text-body3: 14px;
+  --text-body3--line-height: 20px;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-btn: 16px;
+  --text-btn--line-height: 20px;
+  --text-btn-xs: 14px;
+  --text-btn-xs--line-height: 16px;
+}
+
+/* Font families come from next/font (see app/fonts.ts) */
+@theme inline {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-heading), "Bebas Neue", Impact, sans-serif;
+  --color-background: #ffffff;
+  --color-foreground: var(--color-ink);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-weight: 500;
+}
+
+/* Headings default to the display face */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+/* Hide scrollbars on horizontal carousels while keeping them scrollable */
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
