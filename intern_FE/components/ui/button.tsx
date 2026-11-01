@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/cn";
 
-export type ButtonVariant = "primary" | "outline" | "ghost" | "neutral";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "neutral";
 export type ButtonSize = "md" | "sm" | "xs";
 
 const base =
@@ -12,6 +12,7 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: "rounded-xs bg-brand text-white hover:bg-brand-dark",
+  secondary: "rounded-xs border border-stroke-bold bg-white text-ink hover:bg-surface-a",
   outline: "rounded-xs border border-brand bg-transparent text-brand hover:bg-brand/5",
   ghost: "rounded-none bg-transparent text-ink hover:underline",
   neutral: "rounded-full border border-stroke-bold bg-white text-ink hover:bg-surface-a",

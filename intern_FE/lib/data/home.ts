@@ -12,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Rent", href: "#", hasMenu: true },
   { label: "Invest", href: "#", hasMenu: true },
   { label: "Mortgage", href: "#", hasMenu: true },
-  { label: "Learning Center", href: "#" },
+  { label: "Learning Center", href: "/blog" },
   { label: "Real Estate Agent", href: "#" },
   { label: "About us", href: "#", hasMenu: true },
 ];
@@ -369,7 +369,7 @@ export const FOOTER_COLUMNS: FooterLinkGroup[][] = [
       heading: "Invest",
       links: ["Rental property ROI calculator", "1031 Exchange"].map((label) => ({ label, href: "#" })),
     },
-    { heading: "Learning Center", links: [{ label: "Learning Center", href: "#" }] },
+    { heading: "Learning Center", links: [{ label: "Learning Center", href: "/blog" }] },
     { heading: "Real Estate Agent", links: [{ label: "Real Estate Agent", href: "#" }] },
     {
       heading: "About us",
