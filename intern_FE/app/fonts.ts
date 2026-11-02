@@ -1,4 +1,5 @@
-import { Bebas_Neue, Outfit } from "next/font/google";
+import { Bebas_Neue } from "next/font/google";
+import localFont from "next/font/local";
 
 /**
  * Heading face – matches Figma "Bebas Neue Regular".
@@ -11,25 +12,16 @@ export const headingFont = Bebas_Neue({
 });
 
 /**
- * Body face – Figma uses Gilroy (Medium 500 / Bold 700), a commercial font.
- * Outfit is a close geometric stand-in until licensed Gilroy files are added.
- *
- * To switch to Gilroy, drop the .woff2 files in app/fonts/gilroy/ and replace
- * the export below with:
- *
- *   import localFont from "next/font/local";
- *   export const bodyFont = localFont({
- *     src: [
- *       { path: "./fonts/gilroy/Gilroy-Medium.woff2", weight: "500", style: "normal" },
- *       { path: "./fonts/gilroy/Gilroy-Bold.woff2", weight: "700", style: "normal" },
- *     ],
- *     variable: "--font-body",
- *     display: "swap",
- *   });
+ * Body face – Figma "Gilroy" (Medium 500 for body/buttons, Bold 700 for
+ * emphasised text). Self-hosted from app/fonts/gilroy via next/font/local;
+ * only the two weights the design uses are shipped.
  */
-export const bodyFont = Outfit({
-  weight: ["500", "700"],
-  subsets: ["latin"],
+export const bodyFont = localFont({
+  src: [
+    { path: "./fonts/gilroy/Gilroy-Medium.woff", weight: "500", style: "normal" },
+    { path: "./fonts/gilroy/Gilroy-Bold.woff", weight: "700", style: "normal" },
+  ],
   variable: "--font-body",
   display: "swap",
+  fallback: ["ui-sans-serif", "system-ui", "sans-serif"],
 });
