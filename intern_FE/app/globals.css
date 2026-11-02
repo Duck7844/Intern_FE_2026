@@ -75,22 +75,25 @@
   --color-foreground: var(--color-ink);
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
-  font-weight: 500;
-}
+/* Base styles live in the base layer so Tailwind utilities can override them */
+@layer base {
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 500;
+  }
 
-/* Headings default to the display face */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 400;
+  /* Headings default to the display face */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+  }
 }
 
 /* Hide scrollbars on horizontal carousels while keeping them scrollable */

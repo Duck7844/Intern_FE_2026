@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import { ACCOUNT_LINKS, AGENT_LINK, NAV_ITEMS, PHONE } from "@/lib/data/home";
 import { MobileMenu } from "./mobile-menu";
 
@@ -10,7 +11,12 @@ import { MobileMenu } from "./mobile-menu";
  *  - 40px nav row, centered
  * Below `lg` the nav collapses into a hamburger drawer.
  */
-export function SiteHeader() {
+type SiteHeaderProps = {
+  /** href of the nav item for the current page – rendered in brand red. */
+  activeHref?: string;
+};
+
+export function SiteHeader({ activeHref }: SiteHeaderProps = {}) {
   return (
     <header
       className="sticky top-0 z-50 border-b border-stroke-light bg-surface [--header-h:56px] lg:[--header-h:93px]"
@@ -67,7 +73,14 @@ export function SiteHeader() {
         <ul className="flex h-10 items-center justify-center gap-6 px-8">
           {NAV_ITEMS.map((item) => (
             <li key={item.label}>
-              <Link href={item.href} className="flex items-center gap-1 text-body2 text-ink hover:text-brand">
+              <Link
+                href={item.href}
+                aria-current={item.href === activeHref ? "page" : undefined}
+                className={cn(
+                  "flex items-center gap-1 text-body2 hover:text-brand",
+                  item.href === activeHref ? "text-brand" : "text-ink",
+                )}
+              >
                 {item.label}
                 {item.hasMenu && (
                   <Image src="/icons/chevron-down.svg" alt="" width={20} height={20} />
