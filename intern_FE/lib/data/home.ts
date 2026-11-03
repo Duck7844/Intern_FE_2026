@@ -374,12 +374,12 @@ export const FOOTER_COLUMNS: FooterLinkGroup[][] = [
     {
       heading: "About us",
       links: [
-        "Our story",
-        "Pacificwide's Services",
-        "Home Selling Strategy",
-        "Terms Of Use",
-        "Privacy Policy",
-      ].map((label) => ({ label, href: "#" })),
+        { label: "Our story", href: "#" },
+        { label: "Pacificwide's Services", href: "/services" },
+        { label: "Home Selling Strategy", href: "#" },
+        { label: "Terms Of Use", href: "#" },
+        { label: "Privacy Policy", href: "#" },
+      ],
     },
   ],
 ];

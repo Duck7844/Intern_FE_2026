@@ -8,7 +8,7 @@ import type { NavItem } from "@/lib/data/home";
 type MobileMenuProps = {
   nav: NavItem[];
   accountLinks: { label: string; href: string }[];
-  agentLink: { label: string; href: string };
+  agentLink?: { label: string; href: string };
   phone: string;
 };
 
@@ -88,9 +88,11 @@ export function MobileMenu({ nav, accountLinks, agentLink, phone }: MobileMenuPr
               </Link>
             ))}
           </div>
-          <Link href={agentLink.href} onClick={() => setOpen(false)} className="text-ink">
-            {agentLink.label}
-          </Link>
+          {agentLink && (
+            <Link href={agentLink.href} onClick={() => setOpen(false)} className="text-ink">
+              {agentLink.label}
+            </Link>
+          )}
         </div>
       </nav>
     </>

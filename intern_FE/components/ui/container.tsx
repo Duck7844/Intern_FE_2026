@@ -11,6 +11,11 @@ type ContainerProps<T extends ElementType> = {
    * so 1366 → 1093px, 1440 → 1142px with 149px margins, 1920 → 1142px centred.
    */
   gutter?: "default" | "fluid";
+  /**
+   * `content` – the 1142px design width.
+   * `narrow` – the 720px reading column used by article and services pages.
+   */
+  size?: "content" | "narrow";
 } & Omit<ComponentPropsWithoutRef<T>, "as" | "className">;
 
 const gutters = {
@@ -18,12 +23,16 @@ const gutters = {
   fluid: "mx-auto box-content max-w-content px-4 sm:px-6 lg:px-[10%]",
 } as const;
 
+const narrow = "mx-auto w-full max-w-[720px] px-4 sm:px-6 lg:px-0";
+
 export function Container<T extends ElementType = "div">({
   as,
   className,
   gutter = "default",
+  size = "content",
   ...props
 }: ContainerProps<T>) {
   const Tag = (as ?? "div") as ElementType;
-  return <Tag className={cn(gutters[gutter], className)} {...props} />;
+  const base = size === "narrow" ? narrow : gutters[gutter];
+  return <Tag className={cn(base, className)} {...props} />;
 }
