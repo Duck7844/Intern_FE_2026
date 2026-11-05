@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
-import { ACCOUNT_LINKS, AGENT_LINK, NAV_ITEMS, PHONE } from "@/lib/data/home";
+import { AGENT_LINK, NAV_ITEMS, PHONE } from "@/lib/data/home";
+import { AccountLinks } from "./account-links";
 import { MobileMenu } from "./mobile-menu";
 
 /**
@@ -40,11 +41,7 @@ export function SiteHeader({ activeHref }: SiteHeaderProps = {}) {
             {PHONE}
           </a>
           <Divider />
-          {ACCOUNT_LINKS.map((l) => (
-            <Link key={l.label} href={l.href} className="py-1 text-btn text-ink hover:underline">
-              {l.label}
-            </Link>
-          ))}
+          <AccountLinks linkClassName="py-1 text-btn text-ink hover:underline" />
           <Divider />
           <Link href={AGENT_LINK.href} className="py-1 text-btn text-ink hover:underline">
             {AGENT_LINK.label}
@@ -61,7 +58,7 @@ export function SiteHeader({ activeHref }: SiteHeaderProps = {}) {
           </a>
           <MobileMenu
             nav={NAV_ITEMS}
-            accountLinks={ACCOUNT_LINKS}
+            accountSlot={<AccountLinks linkClassName="text-ink" className="gap-4" />}
             agentLink={AGENT_LINK}
             phone={PHONE}
           />

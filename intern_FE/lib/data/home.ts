@@ -14,12 +14,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Mortgage", href: "#", hasMenu: true },
   { label: "Learning Center", href: "/blog" },
   { label: "Real Estate Agent", href: "#" },
-  { label: "About us", href: "#", hasMenu: true },
-];
-
-export const ACCOUNT_LINKS = [
-  { label: "Sign in", href: "#" },
-  { label: "Sign up", href: "#" },
+  { label: "About us", href: "/services" },
 ];
 
 export const AGENT_LINK = { label: "Agent Sign in", href: "#" };

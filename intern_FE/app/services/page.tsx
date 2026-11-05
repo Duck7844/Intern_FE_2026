@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <SimpleHeader nav={SERVICES_HEADER.nav} phone={SERVICES_HEADER.phone} accountLinks={SERVICES_HEADER.account} />
+      <SimpleHeader nav={SERVICES_HEADER.nav} phone={SERVICES_HEADER.phone} />
       <main className="flex flex-1 flex-col">
         <section className="bg-white pb-14 pt-14 md:pb-20 md:pt-20 lg:pb-[120px]">
           <Container size="narrow">

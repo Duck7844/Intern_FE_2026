@@ -1,18 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, type ReactNode } from "react";
 import { cn } from "@/lib/cn";
 import type { NavItem } from "@/lib/data/home";
 
 type MobileMenuProps = {
   nav: NavItem[];
-  accountLinks: { label: string; href: string }[];
+  /** Account area (Sign in / Sign up or name + Sign out), rendered by the server. */
+  accountSlot: ReactNode;
   agentLink?: { label: string; href: string };
   phone: string;
 };
 
-export function MobileMenu({ nav, accountLinks, agentLink, phone }: MobileMenuProps) {
+export function MobileMenu({ nav, accountSlot, agentLink, phone }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
 
@@ -77,19 +78,18 @@ export function MobileMenu({ nav, accountLinks, agentLink, phone }: MobileMenuPr
             </li>
           ))}
         </ul>
-        <div className="flex flex-col gap-3 border-t border-stroke-light px-4 py-4 text-body2 sm:px-6">
+        <div
+          className="flex flex-col gap-3 border-t border-stroke-light px-4 py-4 text-body2 sm:px-6"
+          onClick={(e) => {
+            if ((e.target as HTMLElement).closest("a")) setOpen(false);
+          }}
+        >
           <a href={`tel:${phone.replace(/\D/g, "")}`} className="text-ink">
             {phone}
           </a>
-          <div className="flex items-center gap-4">
-            {accountLinks.map((l) => (
-              <Link key={l.label} href={l.href} onClick={() => setOpen(false)} className="text-ink">
-                {l.label}
-              </Link>
-            ))}
-          </div>
+          {accountSlot}
           {agentLink && (
-            <Link href={agentLink.href} onClick={() => setOpen(false)} className="text-ink">
+            <Link href={agentLink.href} className="text-ink">
               {agentLink.label}
             </Link>
           )}

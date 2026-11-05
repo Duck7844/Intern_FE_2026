@@ -9,13 +9,9 @@ export const SERVICES_HEADER = {
     { label: "Sell", href: "#", hasMenu: true },
     { label: "Mortgage", href: "#", hasMenu: true },
     { label: "Learning Center", href: "/blog" },
-    { label: "About us", href: "#", hasMenu: true },
+    { label: "About us", href: "/services"},
   ] satisfies NavItem[],
   phone: "+1 (408) 532-1278",
-  account: [
-    { label: "Sign in", href: "#" },
-    { label: "Sign up", href: "#" },
-  ],
 };
 
 export const SERVICES_INTRO = {

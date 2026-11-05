@@ -6,24 +6,17 @@ import { Chip } from "@/components/ui/chip";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { AFFORDABILITY_CHIPS, AFFORDABILITY_POINTS, AFFORDABLE_LISTINGS } from "@/lib/data/home";
+import type { SectionCopy } from "./section-copy";
 
 /** Figma `re/home affordability/1440px` – pitch + chips + affordable listings. */
-export function Affordability() {
+export function Affordability({ copy }: { copy: SectionCopy }) {
   return (
     <section className="bg-surface-a py-14 md:py-20 lg:py-[120px]">
       <Container className="flex flex-col items-center gap-10 md:gap-[60px]">
         {/* Pitch */}
         <div className="flex flex-col items-center gap-6 md:gap-8">
           <div className="flex flex-col items-center gap-5 md:gap-6">
-            <SectionHeading
-              title="Find home you can afford"
-              description={
-                <>
-                  Get instant matches for homes in your price range
-                  <br className="hidden md:block" /> with no guesswork and only real options.
-                </>
-              }
-            />
+            <SectionHeading title={copy.title} description={copy.content} className="md:max-w-[640px]" />
             <CheckList items={AFFORDABILITY_POINTS} className="self-start md:self-center" />
           </div>
           <Button href="#" size="sm">

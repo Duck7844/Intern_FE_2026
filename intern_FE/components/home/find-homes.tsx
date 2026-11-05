@@ -3,16 +3,14 @@ import Link from "next/link";
 import { Container } from "@/components/ui/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { BUDGET_TILES } from "@/lib/data/home";
+import type { SectionCopy } from "./section-copy";
 
 /** Figma `re/find home/1440px` – four budget tiles with "View Homes" links. */
-export function FindHomes() {
+export function FindHomes({ copy }: { copy: SectionCopy }) {
   return (
     <section className="bg-white py-14 md:py-20 lg:py-[120px]">
       <Container className="flex flex-col items-center gap-8 md:gap-10">
-        <SectionHeading
-          title="Find Homes in San Jose That Fit Your Budget"
-          description="Pick a monthly payment and discover homes you can truly afford."
-        />
+        <SectionHeading title={copy.title} description={copy.content} />
         <ul className="grid w-full grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {BUDGET_TILES.map((tile) => (
             <li key={tile.label} className="flex flex-col gap-3 md:gap-4">

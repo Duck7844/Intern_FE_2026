@@ -1,9 +1,9 @@
 import { PostCard } from "@/components/cards/post-card";
-import type { Post } from "@/lib/data/blog";
+import type { PostListItem } from "@/types/api";
 
 type LatestNewsProps = {
-  featured: Post;
-  aside: Post[];
+  featured: PostListItem;
+  aside: PostListItem[];
 };
 
 /**
@@ -20,11 +20,13 @@ export function LatestNews({ featured, aside }: LatestNewsProps) {
       </h2>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
         <PostCard post={featured} size="featured" className="lg:col-span-2" />
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 lg:gap-10">
-          {aside.map((p) => (
-            <PostCard key={p.slug} post={p} />
-          ))}
-        </div>
+        {aside.length > 0 && (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 lg:gap-10">
+            {aside.map((p) => (
+              <PostCard key={p.id} post={p} />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

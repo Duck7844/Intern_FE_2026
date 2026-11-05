@@ -3,8 +3,8 @@ import { SimpleHeader } from "./simple-header";
 
 /** Blog variant of the single-row header (Figma `re website / heading`). */
 export function BlogHeader({ activeHref }: { activeHref?: string }) {
-  const { nav, mortgageSite, phone, account } = BLOG_HEADER;
+  const { nav, mortgageSite, phone } = BLOG_HEADER;
   return (
-    <SimpleHeader nav={nav} phone={phone} accountLinks={account} extraLink={mortgageSite} activeHref={activeHref} />
+    <SimpleHeader nav={nav} phone={phone} extraLink={mortgageSite} activeHref={activeHref} />
   );
 }

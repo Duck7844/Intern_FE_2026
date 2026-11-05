@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/cn";
 import type { NavItem } from "@/lib/data/home";
+import { AccountLinks } from "./account-links";
 import { MobileMenu } from "./mobile-menu";
 
 type LinkItem = { label: string; href: string };
@@ -9,7 +10,6 @@ type LinkItem = { label: string; href: string };
 export type SimpleHeaderProps = {
   nav: NavItem[];
   phone: string;
-  accountLinks: LinkItem[];
   /** Optional extra link shown before the phone (e.g. "Mortgage website"). */
   extraLink?: LinkItem;
   /** href of the nav item for the current page – rendered in brand red. */
@@ -20,9 +20,10 @@ export type SimpleHeaderProps = {
  * Single 64px header row (Figma `re website / heading`): logo + nav on the
  * left, optional extra link, phone, divider and account links on the right.
  * Below `lg` it collapses to logo + hamburger, reusing the site drawer.
- * Data differs per page (Blog, Services), so it is passed in as props.
+ * Nav data differs per page (Blog, Services), so it is passed in as props;
+ * the account links come from the visitor session.
  */
-export function SimpleHeader({ nav, phone, accountLinks, extraLink, activeHref }: SimpleHeaderProps) {
+export function SimpleHeader({ nav, phone, extraLink, activeHref }: SimpleHeaderProps) {
   const tel = `tel:${phone.replace(/\D/g, "")}`;
 
   return (
@@ -73,18 +74,19 @@ export function SimpleHeader({ nav, phone, accountLinks, extraLink, activeHref }
             {phone}
           </a>
           <span aria-hidden className="h-6 w-px bg-stroke-bold" />
-          {accountLinks.map((l) => (
-            <Link key={l.label} href={l.href} className="text-body2 text-ink hover:text-brand">
-              {l.label}
-            </Link>
-          ))}
+          <AccountLinks linkClassName="text-body2 text-ink hover:text-brand" />
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
           <a href={tel} className="hidden py-1 text-btn text-ink sm:inline">
             {phone}
           </a>
-          <MobileMenu nav={nav} accountLinks={accountLinks} agentLink={extraLink} phone={phone} />
+          <MobileMenu
+            nav={nav}
+            accountSlot={<AccountLinks linkClassName="text-ink" className="gap-4" />}
+            agentLink={extraLink}
+            phone={phone}
+          />
         </div>
       </div>
     </header>
