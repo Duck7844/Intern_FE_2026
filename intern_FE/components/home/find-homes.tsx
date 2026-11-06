@@ -17,7 +17,7 @@ export function FindHomes({ copy }: { copy: SectionCopy }) {
               <Link
                 href={tile.href}
                 aria-label={tile.label}
-                className="relative block h-[180px] w-full overflow-hidden rounded-s bg-brand sm:h-[240px] lg:h-[293px]"
+                className="relative block h-[180px] w-full overflow-hidden rounded-sm bg-brand sm:h-[240px] lg:h-[293px]"
               >
                 <Image
                   src={tile.image}

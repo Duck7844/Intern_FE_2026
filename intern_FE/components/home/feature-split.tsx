@@ -27,7 +27,7 @@ export function FeatureSplit({ content, copy, reverse = false, tone = "white" }:
   return (
     <section className={cn("py-10 md:py-16 lg:py-20", tone === "grey" ? "bg-surface-a" : "bg-white")}>
       <Container className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
-        <div className={cn("relative aspect-[556/340] w-full overflow-hidden rounded-s bg-stroke-light", reverse && "lg:order-2")}>
+        <div className={cn("relative aspect-[556/340] w-full overflow-hidden rounded-sm bg-stroke-light", reverse && "lg:order-2")}>
           {image ? (
             <Image src={image} alt={content.imageAlt} fill sizes="(min-width: 1024px) 556px, 100vw" className="object-cover" />
           ) : (

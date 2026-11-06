@@ -27,7 +27,7 @@ export function Newsletter() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_20%_80%,#efe4d2_0%,transparent_60%),radial-gradient(50%_60%_at_85%_20%,#e0632f_0%,transparent_65%)]"
       />
       <div className="mx-auto w-full max-w-[732px] px-4 sm:px-6 lg:px-0">
-        <div className="flex flex-col gap-6 rounded-s bg-white p-6 md:p-10 lg:p-[52px]">
+        <div className="flex flex-col gap-6 rounded-sm bg-white p-6 md:p-10 lg:p-[52px]">
           <div className="flex flex-col gap-2 text-center text-ink">
             <h2 className="text-h2a-sm md:text-h2a">Get expert tips straight to your inbox</h2>
             <p className="text-body2 md:text-body1">

@@ -20,7 +20,7 @@
   /* Radii */
   --radius-label: 4px;
   --radius-xs: 8px;
-  --radius-s: 12px;
+  --radius-sm: 12px;
 
   /* Layout */
   --container-content: 1142px; /* 1440 - 2 x 149 */

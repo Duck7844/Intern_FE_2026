@@ -11,7 +11,7 @@ export function Services() {
           {SERVICES.map((s) => (
             <li
               key={s.title}
-              className="flex min-h-[260px] flex-col justify-between gap-6 rounded-s border border-stroke-bold bg-surface-a px-6 pb-6 pt-8 sm:last:col-span-2 lg:last:col-span-1 lg:min-h-[320px]"
+              className="flex min-h-[260px] flex-col justify-between gap-6 rounded-sm border border-stroke-bold bg-surface-a px-6 pb-6 pt-8 sm:last:col-span-2 lg:last:col-span-1 lg:min-h-[320px]"
             >
               <div className="flex flex-col gap-2 text-ink">
                 <h2 className="text-h2a-sm md:text-h2a">{s.title}</h2>

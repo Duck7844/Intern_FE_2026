@@ -28,7 +28,7 @@ export default function ServicesPage() {
             <h1 className="text-h2-sm text-ink md:text-h2">{SERVICES_INTRO.title}</h1>
             <p className="mt-6 text-body2 text-ink">{SERVICES_INTRO.description}</p>
 
-            <figure className="relative mt-8 aspect-video w-full overflow-hidden rounded-s bg-stroke-light">
+            <figure className="relative mt-8 aspect-video w-full overflow-hidden rounded-sm bg-stroke-light">
               <Image
                 src={SERVICES_INTRO.image}
                 alt={SERVICES_INTRO.imageAlt}

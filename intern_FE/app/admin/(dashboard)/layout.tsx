@@ -3,7 +3,6 @@ import { redirect } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { AdminShell, AdminShellSkeleton } from "@/components/admin/admin-shell";
 import { getAdminSession } from "@/lib/api/admin-session";
-import type { AuthUser } from "@/types/api";
 
 /**
  * Every signed-in admin screen renders through this guard. The session is
@@ -20,23 +19,20 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
 }
 
 async function Guard({ children }: { children: ReactNode }) {
-  let session: { user: AuthUser; token: string } | null;
-  try {
-    session = await getAdminSession();
-  } catch (error) {
-    // Network failure (API down) rather than an auth failure: say so instead
-    // of crashing the page with "fetch failed".
-    console.error("admin session check failed", error);
+  const session = await getAdminSession();
+  if (session.status === "unavailable") {
+    // API down rather than an auth failure: say so instead of crashing the page.
+    console.error("admin session check failed", session.error);
     return <ApiUnavailable />;
   }
-  if (!session) redirect("/admin/login?reason=expired");
+  if (session.status === "anonymous") redirect("/admin/login?reason=expired");
   return <AdminShell email={session.user.email}>{children}</AdminShell>;
 }
 
 function ApiUnavailable() {
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-16">
-      <div className="w-full max-w-md rounded-s border border-stroke-light bg-white p-8 text-center">
+      <div className="w-full max-w-md rounded-sm border border-stroke-light bg-white p-8 text-center">
         <h1 className="font-sans text-h4 font-bold tracking-normal text-ink">API is not reachable</h1>
         <p className="mt-2 text-body3 text-ink-secondary">
           The admin area needs the backend API (intern_be). Start it, then reload this page.

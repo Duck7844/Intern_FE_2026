@@ -85,7 +85,7 @@ export function ContactCta() {
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(70%_50%_at_50%_0%,#8a6a45_0%,transparent_60%),radial-gradient(60%_50%_at_50%_100%,#2f6b6a_0%,transparent_65%)]"
       />
       <div className="mx-auto w-full max-w-[440px] px-4 sm:px-0">
-        <div className="flex flex-col gap-6 rounded-s bg-white p-6 md:p-8">
+        <div className="flex flex-col gap-6 rounded-sm bg-white p-6 md:p-8">
           <div className="flex flex-col gap-3 text-center text-ink">
             <h2 className="text-h2a-sm md:text-h2a">
               {CONTACT_CTA.title.map((line) => (

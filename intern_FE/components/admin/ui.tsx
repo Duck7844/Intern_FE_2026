@@ -29,7 +29,7 @@ export function PageHeader({
 }
 
 export function Card({ className, children }: { className?: string; children: ReactNode }) {
-  return <div className={cn("rounded-s border border-stroke-light bg-white p-5 md:p-6", className)}>{children}</div>;
+  return <div className={cn("rounded-sm border border-stroke-light bg-white p-5 md:p-6", className)}>{children}</div>;
 }
 
 type Tone = "error" | "success" | "info" | "warning";
@@ -80,7 +80,7 @@ export function LoadingBlock({ label = "Loading…", rows = 4 }: { label?: strin
 
 export function EmptyState({ title, description, action }: { title: string; description?: string; action?: ReactNode }) {
   return (
-    <div className="flex flex-col items-center gap-3 rounded-s border border-dashed border-stroke-bold px-6 py-14 text-center">
+    <div className="flex flex-col items-center gap-3 rounded-sm border border-dashed border-stroke-bold px-6 py-14 text-center">
       <p className="text-body1 font-semibold text-ink">{title}</p>
       {description && <p className="max-w-md text-body3 text-ink-secondary">{description}</p>}
       {action}
@@ -180,7 +180,7 @@ export function ConfirmDialog({
         role="dialog"
         aria-modal="true"
         aria-labelledby="confirm-title"
-        className="w-full max-w-sm rounded-s bg-white p-6 shadow-lg"
+        className="w-full max-w-sm rounded-sm bg-white p-6 shadow-lg"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 id="confirm-title" className="text-body1 font-bold text-ink">

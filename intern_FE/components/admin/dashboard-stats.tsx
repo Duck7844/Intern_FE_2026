@@ -61,7 +61,7 @@ export function DashboardStatsView() {
 
 function StatCard({ title, value, detail, href, highlight }: { title: string; value: number; detail: string; href: string; highlight?: boolean }) {
   return (
-    <Link href={href} className="rounded-s border border-stroke-light bg-white p-5 transition-colors hover:border-stroke-bold">
+    <Link href={href} className="rounded-sm border border-stroke-light bg-white p-5 transition-colors hover:border-stroke-bold">
       <p className="text-body3 text-ink-secondary">{title}</p>
       <p className={`mt-2 font-heading text-h2 ${highlight ? "text-brand" : "text-ink"}`}>{value}</p>
       <p className="mt-1 text-caption text-ink-secondary">{detail}</p>

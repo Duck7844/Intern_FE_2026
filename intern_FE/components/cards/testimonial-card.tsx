@@ -11,7 +11,7 @@ export function TestimonialCard({ review, className }: { review: Review; classNa
   return (
     <article
       className={cn(
-        "flex h-full flex-col justify-between gap-6 rounded-s border border-transparent bg-surface-a p-6 transition-colors hover:border-stroke-bold hover:bg-white",
+        "flex h-full flex-col justify-between gap-6 rounded-sm border border-transparent bg-surface-a p-6 transition-colors hover:border-stroke-bold hover:bg-white",
         className,
       )}
     >

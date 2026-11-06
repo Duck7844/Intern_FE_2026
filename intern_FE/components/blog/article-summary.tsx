@@ -3,7 +3,7 @@ import { SparkleIcon } from "@/components/icons/ui-icons";
 /** Grey "Summary" box with the AI-generated note underneath. */
 export function ArticleSummary({ text }: { text: string }) {
   return (
-    <aside aria-labelledby="article-summary" className="rounded-s bg-surface-a p-6 md:p-8">
+    <aside aria-labelledby="article-summary" className="rounded-sm bg-surface-a p-6 md:p-8">
       <h2 id="article-summary" className="text-h5 text-ink">
         Summary
       </h2>

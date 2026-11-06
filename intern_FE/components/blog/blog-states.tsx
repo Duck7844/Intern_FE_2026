@@ -15,7 +15,7 @@ export function BlogListSkeleton() {
 
 export function BlogError({ detail }: { detail?: string }) {
   return (
-    <div className="w-full rounded-s border border-stroke-light bg-surface-a px-6 py-16 text-center">
+    <div className="w-full rounded-sm border border-stroke-light bg-surface-a px-6 py-16 text-center">
       <h2 className="text-h3 text-ink">Articles are temporarily unavailable</h2>
       <p className="mt-2 text-body2 text-ink-secondary">We could not reach the content service. Please try again shortly.</p>
       {detail && process.env.NODE_ENV !== "production" && (
@@ -27,7 +27,7 @@ export function BlogError({ detail }: { detail?: string }) {
 
 export function BlogEmpty({ query }: { query?: string }) {
   return (
-    <div className="w-full rounded-s border border-stroke-light bg-surface-a px-6 py-16 text-center">
+    <div className="w-full rounded-sm border border-stroke-light bg-surface-a px-6 py-16 text-center">
       <h2 className="text-h3 text-ink">{query ? "No articles match your search" : "No articles yet"}</h2>
       <p className="mt-2 text-body2 text-ink-secondary">
         {query ? `Nothing found for “${query}”. Try a different keyword.` : "Check back soon for new guides and market insights."}

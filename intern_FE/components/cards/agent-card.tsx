@@ -12,7 +12,7 @@ export function AgentCard({ agent, className }: { agent: Agent; className?: stri
   return (
     <article
       className={cn(
-        "flex h-full flex-col overflow-hidden rounded-s border border-transparent bg-white transition-shadow hover:border-stroke-bold hover:shadow-card",
+        "flex h-full flex-col overflow-hidden rounded-sm border border-transparent bg-white transition-shadow hover:border-stroke-bold hover:shadow-card",
         className,
       )}
     >

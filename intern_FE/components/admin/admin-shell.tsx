@@ -125,7 +125,7 @@ export function AdminShellSkeleton() {
         <div className="h-14 border-b border-stroke-light bg-white" />
         <div className="mx-auto mt-8 w-full max-w-6xl space-y-4 px-4">
           <div className="h-8 w-56 rounded bg-surface" />
-          <div className="h-40 rounded-s bg-white" />
+          <div className="h-40 rounded-sm bg-white" />
         </div>
       </div>
     </div>

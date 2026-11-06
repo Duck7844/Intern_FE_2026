@@ -9,7 +9,7 @@ export function ServiceCard({ block }: { block: ServiceBlock }) {
     <section
       id={block.id}
       aria-labelledby={`${block.id}-title`}
-      className="rounded-s border border-stroke-light bg-surface-a p-6 md:p-8"
+      className="rounded-sm border border-stroke-light bg-surface-a p-6 md:p-8"
     >
       <h2 id={`${block.id}-title`} className="text-h4 tracking-[0.24px] text-ink">
         {block.title}

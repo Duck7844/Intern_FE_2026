@@ -62,7 +62,7 @@ export function ArticleSkeleton() {
         <div className="h-5 w-16 rounded bg-surface" />
         <div className="mt-6 h-10 w-3/4 rounded bg-surface" />
         <div className="mt-6 h-5 w-1/2 rounded bg-surface" />
-        <div className="mt-8 h-[200px] rounded-s bg-surface-a" />
+        <div className="mt-8 h-[200px] rounded-sm bg-surface-a" />
         <div className="mt-8 aspect-[35/24] w-full rounded-xs bg-surface" />
         <div className="mt-8 space-y-3">
           <div className="h-4 w-full rounded bg-surface" />

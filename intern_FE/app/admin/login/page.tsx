@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Admin sign in | Pacificwide" };
 export default function AdminLoginPage() {
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-16">
-      <div className="w-full max-w-sm rounded-s border border-stroke-light bg-white p-8">
+      <div className="w-full max-w-sm rounded-sm border border-stroke-light bg-white p-8">
         <Link href="/" className="font-heading text-h4 text-brand">
           PACIFICWIDE
         </Link>

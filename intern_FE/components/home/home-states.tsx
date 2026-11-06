@@ -9,7 +9,7 @@ export function HomeSkeleton() {
         <div className="mx-auto h-10 w-64 rounded bg-surface" />
         <div className="grid gap-6 md:grid-cols-3">
           {[0, 1, 2].map((i) => (
-            <div key={i} className="h-[320px] rounded-s bg-surface-a" />
+            <div key={i} className="h-[320px] rounded-sm bg-surface-a" />
           ))}
         </div>
       </Container>

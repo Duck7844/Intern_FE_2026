@@ -26,7 +26,7 @@ export function HeroSearch() {
   return (
     <form
       onSubmit={onSubmit}
-      className="flex w-full flex-col gap-3 rounded-s bg-white p-4 shadow-card sm:p-6"
+      className="flex w-full flex-col gap-3 rounded-sm bg-white p-4 shadow-card sm:p-6"
     >
       <div role="tablist" aria-label="Listing type" className="flex items-center gap-3">
         {TABS.map((t) => {
